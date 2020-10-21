@@ -7,6 +7,6 @@ int max=num[0];
 for(int i=1; i<num.length;i++)
 if(num[i]>max)
 max=num[i];
-System.out.println("max"+max);
+System.out.println("max "+max);
 }
 }
