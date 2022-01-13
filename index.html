@@ -1,0 +1,999 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>BrightWorld - LED Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+
+    <!-- AOS -->
+    <link href="CSS/aos.css" rel="stylesheet" />
+
+    <!-- OWL -->
+    <link href="CSS/owl.css" rel="stylesheet" />
+
+
+    <!-- Style.css -->
+    <link type="text/css" rel="preload stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'"
+        href="CSS/style.css">
+
+    <!-- MyStyle.css -->
+    <link type="text/css" rel="preload stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'"
+        href="CSS/myStyle.css">
+
+    <link rel="stylesheet" href="CSS/media-query.css">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <div class="sticky-top" id="headbar">
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        <div class="topinner">
+                            <p>BEST OFFER:&nbsp;&nbsp;<strong>10% OFF</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="topinner">
+                            <p>USE CODE:&nbsp;&nbsp;<strong>WELCOME10</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="topinner">
+                            <p style="display:inline-block">
+                                ENDS IN: </p>
+                            <div id="clockdiv">
+                                <div>
+                                    <span id="day"></span>
+                                    <div id="smalltext1">Days</div>
+                                </div>
+                                <div>
+                                    <span id="hr"></span>
+                                    <div id="smalltext2">Hours</div>
+                                </div>
+                                <div>
+                                    <span id="min"></span>
+                                    <div id="smalltext3">Minutes</div>
+                                </div>
+                                <div>
+                                    <span id="sec"></span>
+                                    <div id="smalltext4">Seconds</div>
+                                </div>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="headertop" id="mainheader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><a href="index.html" alt="BW Store" title="BW Store" id="logo"><img
+                                src="Images/BW_Logo-01.png" alt="BW Store" title="BW Store"></a></div>
+                    <div class="col-md-5">
+                        <div class="searchbox">
+                            <div class="form-inline my-6 my-lg-0">
+
+                                <div class="navbar-form" role="search">
+                                    <div class="input-group add-on">
+                                        <input class="form-control mr-sm-6" placeholder="Search brand or category"
+                                            aria-label="Search" autocomplete="off" name="" id="srch-term" type="text">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default search" onclick="searchFunc()">
+                                                Search
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="rightlinks">
+
+                            <li title="Sign In"><a href="Pages/register.html"><i class="fa fa-user"
+                                        aria-hidden="true"></i>Register</a>
+                            </li>
+
+                            <li title="Sign In"><a href="Pages/login.html"><i class="fa fa-user"
+                                        aria-hidden="true"></i>Sign
+                                    In</a></li>
+
+
+                            <li>
+                                <div class="cartbox">
+                                    <a class="basket" title="My Cart" href="" data-toggle="modal" data-target="#cart">
+                                        <img src="Images/cart.png" alt="BW Store Cart">
+                                        <span class="cartitems">
+                                            <span class="total-count" id="myCartCount"></span>
+                                        </span>
+                                    </a>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container" id="desktop_menu">
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">
+                                <i class="fa fa-home" aria-hidden="true"></i> Home <span
+                                    class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Pages/aboutus.html">About Us
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Brands
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" id="generation"
+                                    onclick="window.location.assign('Pages/generation.html')">Generation Lighting</a>
+                                <a class="dropdown-item" id="kichler"
+                                    onclick="window.location.assign('Pages/kichler.html')">Kichler Lighting</a>
+                                <a class="dropdown-item" id="maxim"
+                                    onclick="window.location.assign('Pages/maxim.html')">Maxim
+                                    Lighting</a>
+                                <a class="dropdown-item" id="minka"
+                                    onclick="window.location.assign('Pages/minka.html')">Minka
+                                    Lavery Lighting</a>
+                                <a class="dropdown-item" id="progress"
+                                    onclick="window.location.assign('Pages/progress.html')">Progress Lighting</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categories
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" id="ceiling"
+                                    onclick="window.location.assign('Pages/ceiling.html')">Ceiling Lights</a>
+                                <a class="dropdown-item" id="decorative"
+                                    onclick="window.location.assign('Pages/decorative.html')">Decorative Lights</a>
+                                <a class="dropdown-item" id="emergency"
+                                    onclick="window.location.assign('Pages/emergency.html')">Emergency Lights</a>
+                                <a class="dropdown-item" id="light"
+                                    onclick="window.location.assign('Pages/light.html')">Light
+                                    Bulbs</a>
+                                <a class="dropdown-item" id="outdoor"
+                                    onclick="window.location.assign('Pages/street.html')">Street Lights</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Pages/gallery.html">Gallery
+                            </a>
+                        </li>
+                        <li class="nav-item last">
+                            <a class="nav-link" href="Pages/contact.html">Contact Us
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-3">
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block" src="Images/BannerCopy1.jpg" loading="lazy" alt="Banner 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block" src="Images/BannerCopy.jpg" loading="lazy" alt="Banner 2">
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="kitsection">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="innerkit" data-aos="zoom-in-up">
+                        <a href="Pages/spotlight.html" class="bigoffer"></a>
+                        <div class="pro_left">
+                            <h2>Spot Light</h2>
+                            <p>A spot light contains an electric lamp that provides illumination. All have a
+                                fixture
+                                body and one or more bulbs.</p><a href="Pages/spotlight.html">Shop Now</a>
+                        </div>
+                        <div class="pro_right">
+                            <img src="Images/light24.jpg" loading="lazy" alt="Spot Light" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="innerkit" data-aos="zoom-in-up">
+                        <a href="Pages/pendant.html" class="bigoffer"></a>
+                        <div class="pro_left">
+                            <h2>Pendant</h2>
+                            <p>A pendant light is a lone light fixture that hangs from the ceiling usually suspended
+                                by
+                                a cord, chain or metal rod.</p><a href="Pages/pendant.html">Shop Now</a>
+                        </div>
+                        <div class="pro_right">
+                            <img src="Images/light19.jpg" loading="lazy" alt="Pendant" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="innerkit" data-aos="zoom-in-up">
+                        <a href="Pages/ceiling.html" class="bigoffer"></a>
+                        <div class="pro_left">
+                            <h2>Chandelier</h2>
+                            <p>A chandelier is a branched ornamental light fixture designed to be mounted on
+                                ceilings or
+                                walls. Chandeliers use light bulbs and recently LEDs.</p><a
+                                href="Pages/ceiling.html">Shop
+                                Now</a>
+                        </div>
+                        <div class="pro_right">
+                            <img src="Images/light6.jpg" loading="lazy" alt="Chandelier" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="innerkit" data-aos="zoom-in-up">
+                        <a href="Pages/street.html" class="bigoffer"></a>
+                        <div class="pro_left">
+                            <h2>Street Light</h2>
+                            <p>A street light is a raised source of light on the edge of a road or path. Similar may be
+                                found on a railway platform.</p><a href="Pages/street.html">Shop
+                                Now</a>
+                        </div>
+                        <div class="pro_right">
+                            <img src="Images/light45.jpg" loading="lazy" alt="Modern Pendant" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="top-products mt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 top_products_headig">
+                    <h2>TOP PRODUCTS</h2>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="owl-carousel">
+                        <div>
+                            <div class="product_carousel">
+                                <div class="product_img">
+                                    <a href="">
+                                        <img src="Images/light18.jpg"
+                                            alt="Kichler Hendrik 3 Light 24 inch Wide Pendant with Satin Etched Glass Shades"
+                                            title="Kichler Hendrik 3 Light 24 inch Wide Pendant with Satin Etched Glass Shades">
+                                    </a>
+                                </div>
+                                <div class="product_description">
+                                    <a href="">
+                                        <h5 id="h5_light18">3 Light Wide Pendant</h5>
+                                    </a>
+                                    <p id="p_light18">Brand: Kichler</p>
+                                    <h3 id="h3_light18">$449</h3>
+                                </div>
+                                <div class="product_btns">
+                                    <ul>
+                                        <li id="light18" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                        </li>
+                                        <li id="Addcart_light18" data-name="Kichler_3_Light_Wide_Pendant"
+                                            data-price="449" class="add-to-cart">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product_carousel">
+                                <div class="product_img">
+                                    <a href="">
+                                        <img src="Images/light24.jpg" alt="Minka - 1 Light LED Track Spot - 17 W"
+                                            title="Minka - 1 Light LED Track Spot - 17 W">
+                                    </a>
+                                </div>
+                                <div class="product_description">
+                                    <a href="">
+                                        <h5 id="h5_light24">1 Light LED Track Spot</h5>
+                                    </a>
+                                    <p id="p_light24">Brand: Minka Lavery</p>
+                                    <h3 id="h3_light24">$60</h3>
+                                </div>
+                                <div class="product_btns">
+                                    <ul>
+                                        <li id="light24" onclick="myEye(this.id)"><i class="far fa-eye"></i></li>
+                                        <li id="Addcart_light24" data-name="Minka_1_Light_LED_Track_Spot"
+                                            data-price="60" class="add-to-cart">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product_carousel">
+                                <div class="product_img">
+                                    <a href="">
+                                        <img src="Images/light37.jpg" alt="Progress Lighting EU2C Emergency Light"
+                                            title="Progress Lighting EU2C Emergency Light">
+                                    </a>
+                                </div>
+                                <div class="product_description">
+                                    <a href="">
+                                        <h5 id="h5_light37">EU2C Emergency Light</h5>
+                                    </a>
+                                    <p id="p_light37">Brand: Progress Lighting</p>
+                                    <h3 id="h3_light37">$41</h3>
+                                </div>
+                                <div class="product_btns">
+                                    <ul>
+                                        <li id="light37" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                        </li>
+                                        <li id="Addcart_light37" data-name="Progress_EU2C_Emergency_Light"
+                                            data-price="41" class="add-to-cart">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product_carousel">
+                                <div class="product_img">
+                                    <a href="">
+                                        <img src="Images/light40.jpg" alt="
+                                        Maxim Single Face 12 inch Wide Edge Lit Recessed LED Exit Sign"
+                                            title="Maxim Single Face 12 inch Wide Edge Lit Recessed LED Exit Sign">
+                                    </a>
+                                </div>
+                                <div class="product_description">
+                                    <a href="">
+                                        <h5 id="h5_light40">Single Face Recessed LED</h5>
+                                    </a>
+                                    <p id="p_light40">Brand: Maxim</p>
+                                    <h3 id="h3_light40">$63</h3>
+                                </div>
+                                <div class="product_btns">
+                                    <ul>
+                                        <li id="light40" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                        </li>
+                                        <li id="Addcart_light40" data-name="Maxim_Single_Face_Recessed_LED"
+                                            data-price="63" class="add-to-cart">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product_carousel">
+                                <div class="product_img">
+                                    <a href="">
+                                        <img src="Images/light42.jpg" alt="Generation LED Street Light Slim Model"
+                                            title="Generation LED Street Light Slim Model">
+                                    </a>
+                                </div>
+                                <div class="product_description">
+                                    <a href="">
+                                        <h5 id="h5_light42">Street Light Slim Model</h5>
+                                    </a>
+                                    <p id="p_light42">Brand: Generation Lighting</p>
+                                    <h3 id="h3_light42">$53</h3>
+                                </div>
+                                <div class="product_btns">
+                                    <ul>
+                                        <li id="light42" onclick="myEye(this.id)"><i class="far fa-eye"></i>
+                                        </li>
+                                        <li id="Addcart_light42" data-name="Generation_LED_Street_Light_Slim_Model"
+                                            data-price="53" class="add-to-cart">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="topselling">
+
+        <div class="container">
+            <div class="row">
+                <div class="sellinghead">
+                    <h2>Latest Offers</h2>
+                </div>
+            </div>
+            <div class="bestsellinglist">
+                <div class="row aos-init aos-animate" id="latest-offer-products" data-aos="zoom-in-up">
+
+                    <div class="col-md-4">
+                        <div class="bestproinner">
+                            <!-- <a href=""></a> -->
+                            <div class="imgbox">
+                                <img src="Images/LED1.jpg" alt="Edit Gem LED Wall Light - Polished Chrome"
+                                    title="Edit Gem LED Wall Light - Polished Chrome" loading="lazy">
+
+                            </div>
+                            <div class="detailbox">
+                                <h3>Wall Light</h3>
+                                <h4 class="pro_title_front">Edit Gem LED Wall Light - Polished Chrome</h4>
+                                <h5><del><span class="currencyicon">$</span><span
+                                            class="price_valueshow">77</span></del>&nbsp;&nbsp;&nbsp;<span
+                                        class="currencyicon">$</span><span class="price_valueshow">72</span>
+                                </h5>
+                                <a href="" data-name="Wall_Light" data-price="72" class="add-to-cart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="bestproinner">
+                            <!-- <a href=""></a> -->
+                            <div class="imgbox">
+                                <img src="Images/LED2.jpg" alt="Edit Chai LED Picture Light - Satin Brass"
+                                    title="Edit Chai LED Picture Light - Satin Brass" loading="lazy">
+
+                            </div>
+                            <div class="detailbox">
+                                <h3>Picture Light</h3>
+                                <h4 class="pro_title_front">Edit Chai LED Picture Light - Satin Brass</h4>
+                                <h5><del><span class="currencyicon">$</span><span
+                                            class="price_valueshow">98</span></del>&nbsp;&nbsp;&nbsp;<span
+                                        class="currencyicon">$</span><span class="price_valueshow">93</span>
+                                </h5>
+                                <a href="" data-name="Picture_Light" data-price="93" class="add-to-cart">Add To
+                                    Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="bestproinner">
+                            <!-- <a href=""></a> -->
+                            <div class="imgbox">
+                                <img src="Images/LED3.jpg"
+                                    alt="Robus Commodore Warm White LED Cabinet Light - Brushed Chrome"
+                                    title="Robus Commodore Warm White LED Cabinet Light - Brushed Chrome"
+                                    loading="lazy">
+
+                            </div>
+                            <div class="detailbox">
+                                <h3>Cabinet Light</h3>
+                                <h4 class="pro_title_front">Robus Commodore Warm White LED Cabinet Light -
+                                    Brushed
+                                    Chrome</h4>
+                                <h5><del><span class="currencyicon">$</span><span
+                                            class="price_valueshow">24</span></del>&nbsp;&nbsp;&nbsp;<span
+                                        class="currencyicon">$</span><span class="price_valueshow">19</span>
+                                </h5>
+                                <a href="" data-name="Cabinet_Light" data-price="19" class="add-to-cart">Add To
+                                    Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="bestproinner">
+                            <!-- <a href=""></a> -->
+                            <div class="imgbox">
+                                <img src="Images/LED4.jpg"
+                                    alt="Edit Simple LED Reading Light - Polished Stainless Steel"
+                                    title="Edit Simple LED Reading Light - Polished Stainless Steel" loading="lazy">
+
+                            </div>
+                            <div class="detailbox">
+                                <h3>Reading Light</h3>
+                                <h4 class="pro_title_front">Edit Simple LED Reading Light - Polished Stainless
+                                    Steel
+                                </h4>
+                                <h5><del><span class="currencyicon">$</span><span
+                                            class="price_valueshow">56</span></del>&nbsp;&nbsp;&nbsp;<span
+                                        class="currencyicon">$</span><span class="price_valueshow">51</span>
+                                </h5>
+                                <a href="" data-name="Reading_Light" data-price="51" class="add-to-cart">Add To
+                                    Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="bestproinner">
+                            <!-- <a href=""></a> -->
+                            <div class="imgbox">
+                                <img src="Images/LED5.jpg"
+                                    alt="Crompton 32W RGB LED Flexi Strip Kit with Remote Control - IP65"
+                                    title="Crompton 32W RGB LED Flexi Strip Kit with Remote Control - IP65"
+                                    loading="lazy">
+
+                            </div>
+                            <div class="detailbox">
+                                <h3>Flexi Strip Kit</h3>
+                                <h4 class="pro_title_front">Crompton 32W RGB LED Flexi Strip Kit with Remote
+                                    Control
+                                    - IP65</h4>
+                                <h5><del><span class="currencyicon">$</span><span
+                                            class="price_valueshow">50</span></del>&nbsp;&nbsp;&nbsp;<span
+                                        class="currencyicon">$</span><span class="price_valueshow">45</span>
+                                </h5>
+                                <a href="" data-name="Flexi_Strip_Kit" data-price="45" class="add-to-cart">Add To
+                                    Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="bestproinner">
+                            <!-- <a href=""></a> -->
+                            <div class="imgbox">
+                                <img src="Images/LED6.jpg"
+                                    alt="Mantel LED Shaver Light with Shelf and USB Charging Port"
+                                    title="Mantel LED Shaver Light with Shelf and USB Charging Port" loading="lazy">
+
+                            </div>
+                            <div class="detailbox">
+                                <h3>Shaver Light</h3>
+                                <h4 class="pro_title_front">Mantel LED Shaver Light with Shelf and USB Charging
+                                    Port
+                                </h4>
+                                <h5><del><span class="currencyicon">$</span><span
+                                            class="price_valueshow">118</span></del>&nbsp;&nbsp;&nbsp;<span
+                                        class="currencyicon">$</span><span class="price_valueshow">113</span>
+                                </h5>
+                                <a href="" data-name="Shaver_Light" data-price="113" class="add-to-cart">Add To
+                                    Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="container">
+            <div class="row descModal">
+                <div class="col-md-6">
+                    <img class="modal-content product-modal-img" id="img01">
+                </div>
+                <div class="col-md-6" id="descriptionModal" style="border-left: 1px solid rgba(0,0,0,0.2);">
+                    <h5 id="h501"></h5>
+                    <p id="p01"></p>
+                    <h3 id="h301" style="font-weight: bold;"></h3>
+                    <p style="padding-top: 40px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+                        tempora nulla dolore reiciendis ut dicta maiores quam, nemo amet commodi ipsam illo suscipit
+                        ratione. Quos perspiciatis nisi harum qui eos!</p>
+                    <a href="Files/testdoc.docx" id="a01" class="btnCart" download>Download As Doc</a>
+                    <button href="#" class="btnCart" id="write-review">Write A Rewiew</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonials">
+        <div class="container">
+            <h2>What Customer Says <br> About Us</h2>
+            <div class="owl-carousel row aos-init owl-loaded owl-drag aos-animate ts-testimonial" data-aos="fade-up"
+                id="testimonials">
+
+                <div class="owl-stage-outer">
+                    <div class="owl-stage"
+                        style="transform: translate3d(-3760px, 0px, 0px); transition: all 0.25s ease 0s; width: 5640px;">
+                        <div class="owl-item" style="margin-right: 10px; width: 460px;">
+                            <div class="col-md-12">
+                                <div class="testi_inner">
+                                    <div class="testi_imgbox">
+                                        <img src="Images/small1.jpg" alt="first image" loading="lazy">
+                                    </div>
+                                    <div class="pro_details">
+                                        <h3>Cassandra Powell <span><img src="Images/stars.png" loading="lazy"></span>
+                                        </h3>
+                                        <p>Deliver products on time with effective customer service - Highly
+                                            recommended
+                                            : Happy Customer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item" style="margin-right: 10px; width: 460px;">
+                            <div class="col-md-12">
+                                <div class="testi_inner">
+                                    <div class="testi_imgbox">
+                                        <img src="Images/small2.jpg" alt="second image" loading="lazy">
+                                    </div>
+                                    <div class="pro_details">
+                                        <h3>Jan <span><img src="Images/stars.png" loading="lazy"></span></h3>
+                                        <p>Nice and easy, good price. I'm not a big fan of the discount coupon
+                                            thing, I
+                                            had to order twice and return one because I forgot to enter the code at
+                                            the
+                                            top of the page.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item" style="margin-right: 10px; width: 460px;">
+                            <div class="col-md-12">
+                                <div class="testi_inner">
+                                    <div class="testi_imgbox">
+                                        <img src="Images/small3.jpg" alt="third image" loading="lazy">
+                                    </div>
+                                    <div class="pro_details">
+                                        <h3>Ron <span><img src="Images/stars.png" loading="lazy"></span></h3>
+                                        <p>Excellent service. Genuine discount - happy customer!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item" style="margin-right: 10px; width: 460px;">
+                            <div class="col-md-12">
+                                <div class="testi_inner">
+                                    <div class="testi_imgbox">
+                                        <img src="Images/small4.jpg" alt="fourth image" loading="lazy">
+                                    </div>
+                                    <div class="pro_details">
+                                        <h3>Denise <span><img src="Images/stars.png" loading="lazy"></span></h3>
+                                        <p>Ordered lamps Friday morning, they were delivered Saturday morning. Well
+                                            pleased with that.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item" style="margin-right: 10px; width: 460px;">
+                            <div class="col-md-12">
+                                <div class="testi_inner">
+                                    <div class="testi_imgbox">
+                                        <img src="Images/small5.jpg" alt="fifth image" loading="lazy">
+                                    </div>
+                                    <div class="pro_details">
+                                        <h3>Stuart <span><img src="Images/stars.png" loading="lazy"></span></h3>
+                                        <p>Unbelievable, placed the order on a Friday evening and it arrived the
+                                            next
+                                            day. Great products as well.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span
+                            aria-label="Previous">‹</span></button><button type="button" role="presentation"
+                        class="owl-next"><span aria-label="Next">›</span></button></div>
+                <div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button"
+                        class="owl-dot"><span></span></button><button role="button"
+                        class="owl-dot active"><span></span></button></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4  col-md-4 footer_info">
+                    <h3>Quick Information</h3>
+                    <p><i class="fas fa-envelope"></i><a href="mailto:">&nbsp;&nbsp;support@brightworld.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i><a href="#" onclick="return false;">&nbsp;&nbsp;Ap #867-859
+                            Sit Rd. Azusa New York 39531</a></p>
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li><a href="https://twitter.com/?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-8  col-md-8">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 footer_link">
+                            <h3>Categories</h3>
+                            <ul>
+                                <li><a id="ceiling" onclick="window.location.assign('Pages/ceiling.html')">Ceiling
+                                        Lights</a>
+                                </li>
+                                <li><a id="decorative"
+                                        onclick="window.location.assign('Pages/decorative.html')">Decorative
+                                        Lights</a></li>
+                                <li><a id="emergency" onclick="window.location.assign('Pages/emergency.html')">Emergency
+                                        Lights</a></li>
+                                <li><a id="light" onclick="window.location.assign('Pages/light.html')">Light Bulbs</a>
+                                </li>
+                                <li><a id="wall" onclick="window.location.assign('Pages/street.html')">Street Lights</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 footer_link">
+                            <h3>Brands</h3>
+                            <ul>
+                                <li><a id="generation"
+                                        onclick="window.location.assign('Pages/generation.html')">Generation
+                                        Lighting</a></li>
+                                <li><a id="kichler" onclick="window.location.assign('Pages/kichler.html')">kichler
+                                        Lighting</a></li>
+                                <li><a id="maxim" onclick="window.location.assign('Pages/maxim.html')">Maxim
+                                        Lighting</a></li>
+                                <li><a id="minka" onclick="window.location.assign('Pages/minka.html')">Minka Lavery
+                                        Lighting</a></li>
+                                <li><a id="progress" onclick="window.location.assign('Pages/progress.html')">Progress
+                                        Lighting</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 footer_link">
+                            <h3>Service & Legal</h3>
+                            <ul>
+                                <li><a href="Pages/faqs.html">FAQs</a></li>
+                                <li><a href="Pages/policy.html">Return Policy</a></li>
+                                <li><a href="Pages/privacypolicy.html">Privacy Policy</a></li>
+                                <li><a href="Pages/contact.html">Contact Us</a></li>
+                                <li><a href="Pages/sitemap.html">Site Map</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Copyright © 2021 BrightWorld</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=+923012851596&text=Hello!%20I%27m%20at%20Bright%20World." class="float"
+        target="_blank">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
+
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        style="z-index: 9999;">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content cartModal">
+                <div class="modal-header">
+                    <h5 class="modal-title addtocart-tittle" id="exampleModalLabel">Your Selected Items:</h5>
+                    <button type="button" class="close addtocart-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="table-responsive">
+                                <table class="show-cart table">
+
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3">
+                            <div>Price: $ <span class="total-cart" id="totCart"></span></div>
+                            <div>Discount Code: <input type="text" class="discount-code" id="disc_code"
+                                    placeholder="ENTER CODE">&nbsp;&nbsp;</div>
+                            <button class='applyBtn btn btn-primary' onclick="codeApply()">APPLY</button>
+                            <div>Total Price: <strong>$ <span class="discount-cart" id="discCart"></span></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary Closebtn" data-dismiss="modal">Close</button>
+                    <button type="button" id="buyBtn" class="btn btn-primary Buybtn">Buy now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- user cart form -->
+
+    <div class="modal fade" id="user-cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="z-index: 99999;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter your Details</h5>
+                    <button type="button" class="close addtocart-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body user-cart-body">
+                    <div class="form-group user-cart-form-grp">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="user-cart-name" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group user-cart-form-grp">
+                        <label>Email</label>
+                        <input type="text" class="form-control" id="user-cart-email" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group user-cart-form-grp">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" id="user-cart-phone" placeholder="Enter Phone Number"
+                            maxlength="11">
+                    </div>
+                    <div class="form-group user-cart-form-grp">
+                        <label>Adderss</label>
+                        <input type="text" class="form-control" id="user-cart-address" placeholder="Enter Address">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary Closebtn" data-dismiss="modal">Close</button>
+                    <button type="button" id="user-cart-submit" class="btn btn-primary Buybtn">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- user review form -->
+
+    <div class="modal fade" id="user-review" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="z-index: 99999;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Write A Review</h5>
+                    <button type="button" class="close user-review-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body user-review-body">
+                    <div class="form-group user-review-form-grp">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="user-review-name" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group user-review-form-grp">
+                        <label>Email</label>
+                        <input type="text" class="form-control" id="user-review-email" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group user-review-form-grp">
+                        <label>Review</label>
+                        <textarea type="text" class="form-control" id="user-review-address"
+                            placeholder="Write Review"></textarea>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary Closebtn" data-dismiss="modal">Close</button>
+                    <button type="button" id="user-review-submit" class="btn btn-primary Buybtn">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery, JS  -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+
+
+    <script src="JS/owl.js"></script>
+    <script src="JS/aos.js"></script>
+    <script src="JS/cart.js"></script>
+    <script src="JS/app.js"></script>
+    <script src="JS/modalindex.js"></script>
+    <script src="JS/timer.js"></script>
+    <script src="JS/searchindex.js"></script>
+
+</body>
+
+</html>
+
+<script>
+    AOS.init();
+
+
+
+    const $dropdown = $(".dropdown");
+    const $dropdownToggle = $(".dropdown-toggle");
+    const $dropdownMenu = $(".dropdown-menu");
+    const showClass = "show";
+
+    $(window).on("load resize", function () {
+        if (this.matchMedia("(min-width: 768px)").matches) {
+            $dropdown.hover(
+                function () {
+                    const $this = $(this);
+                    $this.addClass(showClass);
+                    $this.find($dropdownToggle).attr("aria-expanded", "true");
+                    $this.find($dropdownMenu).addClass(showClass);
+                },
+                function () {
+                    const $this = $(this);
+                    $this.removeClass(showClass);
+                    $this.find($dropdownToggle).attr("aria-expanded", "false");
+                    $this.find($dropdownMenu).removeClass(showClass);
+                }
+            );
+        } else {
+            $dropdown.off("mouseenter mouseleave");
+        }
+    });
+</script>
